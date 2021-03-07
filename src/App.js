@@ -15,7 +15,7 @@ function App() {
             <img src={logo} className="logo" alt="SheCodes Logo" />
           </a>
         </header>
-        <Dictionary />
+        <Dictionary defaultKeyword="sunset" />
         <footer>
           This project was coded by{" "}
           <a
