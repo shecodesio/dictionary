@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import Result from "./Result";
 import Photos from "./Photos";
+import "./Dictionary.css";
 
 export default function Dictionary() {
 	const [keyword, setKeyword] = useState(null);
@@ -10,11 +11,6 @@ export default function Dictionary() {
 
 	function handleImages(response) {
 		setPhotos(response.data.photos)
-	}
-
-	function changeWord(word) {
-		setKeyword(word);
-		search();
 	}
 
 
@@ -42,10 +38,15 @@ export default function Dictionary() {
 
 	return (
 		<div className="Dictionary">
-			<form onSubmit={handleSubmit}>
-				<input type="search" placeholder="Enter a word.." className="form-control search-input" autoFocus={true} onChange={handleKeywordChange} />
-			</form>
-			<Result definition={definition} changeWord={changeWord} />
+			<section>
+				<form onSubmit={handleSubmit}>
+					<label>
+						What word do you want to look up?
+					</label>
+					<input type="search" placeholder="Search for a word" className="form-control search-input" onChange={handleKeywordChange} />
+				</form>
+			</section>
+			<Result definition={definition} />
 			<Photos photos={photos} />
 		</div>
 	)

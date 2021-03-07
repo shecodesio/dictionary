@@ -1,19 +1,23 @@
 import React from "react";
+import "./Photos.css"
 
 export default function Photos(props) {
-	console.log(props.photos)
-	if (props.photos) {
+	if (props.photos.length) {
 		return (
-			<div className="Photos">
-				{props.photos.map(function(photo) {
+			<section className="Photos">
+						<div className="row">
+				{props.photos.map(function(photo, index) {
 					
 					return (
-						<div>
-						<img src={photo.src.landscape} />
+						<div className="col-2">
+							<a href={photo.src.original} target="_blank"  rel="noopener noreferrer">
+								<img src={photo.src.landscape} class="img-fluid" key={index} />
+							</a>
 						</div>
 					)
 				})}
-			</div>
+						</div>
+			</section>
 		)
 
 	} else {

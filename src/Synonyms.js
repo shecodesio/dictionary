@@ -1,20 +1,21 @@
 import React from "react";
+import "./Synonyms.css";
 
 export default function Synonyms(props) {
-	function changeWord(event) {
-		props.changeWord(event.target.innerHTML);
-	}
+
 	if (props.synonyms) {
 		return (
-			<div>
+			<div class="Synonyms">
+			<strong>
+				Similar:
+				</strong>
+				
+				<ul>
 			{props.synonyms.map(function(synonym) {
-				return (
-					<div onClick={changeWord}>
-						{synonym}
-					</div>
-				)
+				return <li>{synonym}</li>;
 				
 			})}
+			</ul>
 			</div>
 		)
 
