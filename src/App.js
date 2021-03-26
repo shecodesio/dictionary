@@ -7,11 +7,7 @@ function App() {
     <div className="App">
       <div className="container">
         <header className="App-header">
-          <a
-            href="https://www.shecodes.io/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <a href="https://www.shecodes.io/" target="_blank">
             <img src={logo} className="logo" alt="SheCodes Logo" />
           </a>
         </header>
