@@ -15,8 +15,8 @@ export default function Dictionary(props) {
   }
 
   function handleResponse(response) {
-    setDefinition(response.data);
-    let apiUrl = `https://api.pexels.com/v1/search?query=${response.data.word}&per_page=9`;
+    setDefinition(response.data[0]);
+    let apiUrl = `https://api.pexels.com/v1/search?query=${response.data[0].word}&per_page=9`;
     let apiKey = "563492ad6f91700001000001fcd94c1777b243de94bf7f60bc16a402";
     axios
       .get(apiUrl, { headers: { Authorization: `Bearer ${apiKey}` } })
@@ -29,8 +29,7 @@ export default function Dictionary(props) {
   }
 
   function search() {
-    let apiKey = "eac360db5fc86ft86450f3693e73o43f";
-    let apiUrl = `https://api.shecodes.io/dictionary/v1/define?word=${keyword}&key=${apiKey}`;
+    let apiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en_US/${keyword}`;
     axios.get(apiUrl).then(handleResponse);
   }
 
