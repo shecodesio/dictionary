@@ -9,12 +9,10 @@ export default function Result(props) {
       <div className="Result">
         <section>
           <h1>{props.definition.word}</h1>
-          {props.definition.phonetics.map(function (phonetic, index) {
-            return <Phonetic phonetic={phonetic} key={index} />;
-          })}
+            <Phonetic phonetic={props.definition.phonetic} />
         </section>
 
-        {props.definition.meanings.map(function (meaning, index) {
+        {props.definition.definitions.map(function (meaning, index) {
           return (
             <section key={index}>
               <Meaning meaning={meaning} />
